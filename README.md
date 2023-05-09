@@ -1,10 +1,10 @@
-# Isogramma
+# Descrizione
 
-Determina se una parola o una frase è un isogramma.
+#### Il linguaggio utilizzato in questo codice è il C#
 
-Per come lo intendiamo in questo esercizio, un isogramma è una parola o una frase che non ha lettere ripetute.
-Sono ammessi spazi e segni di punteggiatura ripetuti.
+> Per risolvere questo esercizio bisogna superare 13 test.
 
+#### **Scrivere un programma che determina se una parola o una frase è un isogramma: un isogramma è una parola o una frase che non ha lettere ripetute.**
 Esempi di isogrammi:
 
 - lumberjacks
@@ -27,3 +27,17 @@ Ammettiamo che il prezzo indicato fosse 1200 € ma nel cartellino ci fossero an
 Un isogramma di 12 lettere si può usare per mappare i mesi dell'anno.
 
 [Wikipedia sugli Isogrammi](https://it.wikipedia.org/wiki/Isogramma)
+
+# Descrizione della soluzione
+``` c#
+ word = word.ToLower();
+        for(int i = 0; i < word.Length; i++)
+        for(int j = 0; j < word.Length; j++)
+        if((word[i] == word[j]) && (i != j) && (word[i] !=' ') && (word[i]!= '-'))
+        return false;
+       
+        return true;
+
+``` 
+> Viene convertita la stringa in minuscolo usando il metodo ToLower(). Viene utilizzato un doppio ciclo for per confrontare ogni coppia di caratteri nella stringa. Se due caratteri uguali vengono trovati ad eccezione degli spazi e dei trattini, la funzione restituisce immediatamente false, poiché la stringa non può essere un'isogramma. Se la funzione esce dal ciclo for senza trovare alcuna coppia di caratteri ripetuti, restituisce true poiché la stringa è un'isogramma.
+
